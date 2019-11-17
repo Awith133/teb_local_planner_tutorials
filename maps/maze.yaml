@@ -1,4 +1,4 @@
-image: maze.png
+image: maze_restart.png
 resolution: 0.5
 origin: [0, -1300, 0]
 negate: 0
