@@ -1,4 +1,4 @@
-<!-- 
+<!--
   Simulate a differential drive robot with the teb_local_planner and costmap conversion enabled in stage:
   - stage
   - map_server
@@ -26,7 +26,7 @@
   		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
   		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />
 		<!-- Here we load our costmap conversion settings -->
-		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" /> 
+		<rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" />
 
 		<param name="base_global_planner" value="global_planner/GlobalPlanner" />
 		<param name="planner_frequency" value="1.0" />
@@ -43,15 +43,29 @@
                 <param name="frame_id" value="map"/>
 	</node>
 
+	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
+		</node>
+	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
+			</node>
+
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
 
-	        <param name="initial_pose_x"            value="2"/>
+	  <param name="initial_pose_x"            value="2"/>
 		<param name="initial_pose_y"            value="2"/>
 		<param name="initial_pose_a"            value="0"/>
 	</node -->
 
 	  <!--  **************** Visualisation ****************  -->
 	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz"/>
+
+    <arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
+    <!-- include file="$(find webots_ros)/launch/webots.launch">
+      <arg name="mode" value="realtime"/>
+      <arg name="no-gui" value="$(arg no-gui)"/>
+      <arg name="world" value="/home/himil07/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
+    </include -->
+
+     <node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.57  /map /odom  1"/>
 
 </launch>
