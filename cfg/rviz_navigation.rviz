@@ -228,7 +228,7 @@ Visualization Manager:
               Value: true
             odom:
               Value: true
-          Marker Scale: 1000
+          Marker Scale: 100
           Name: TF
           Show Arrows: true
           Show Axes: true
@@ -301,7 +301,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1933.16418
+      Distance: 657.260559
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
