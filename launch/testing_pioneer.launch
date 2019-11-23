@@ -45,8 +45,8 @@
 
 	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
 		</node>
-	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
-			</node>
+	<!-- node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
+			</node -->
 
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
