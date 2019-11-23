@@ -11,14 +11,15 @@ always_send_full_costmap: true
 
 obstacle_layer:
  enabled: true
- obstacle_range: 3.0
+ obstacle_range: 10.0
  raytrace_range: 4.0
  inflation_radius: 0.2
  track_unknown_space: true
  combination_method: 1
 
- observation_sources: laser_scan_sensor
- laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
+ observation_sources: point_cloud_sensorA
+ point_cloud_sensorA: {sensor_frame: /apnapioneer3at/MultiSense_S21_meta_range_finder, data_type: PointCloud2, topic: /apnapioneer3at/MultiSense_S21_meta_range_finder/point_cloud_segmented
+, marking: true, clearing: true}
 
 
 inflation_layer:
@@ -27,5 +28,5 @@ inflation_layer:
   inflation_radius:     0.5  # max. distance from an obstacle at which costs are incurred for planning paths.
 
 static_layer:
-  enabled:              true
+  enabled:              false
   map_topic:            "/map"
