@@ -58,7 +58,7 @@
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit_demo1.wbt"/>
+      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
     </include>
 	
 	<arg name="auto-close" default="false" doc="Startup mode"/>
@@ -68,5 +68,5 @@
 	<node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.570796326  /map /odom  1"/>
 
 	<node pkg="tf" type="static_transform_publisher" name="camera_base_link_publisher" args="0.23 0 0.18 -1.570796326 0 -1.570796326  /base_link /apnapioneer3at/MultiSense_S21_meta_range_finder 1"/>
-	
+	<param name="show_rock_distances" type="int" value="1"/>
 </launch> 
