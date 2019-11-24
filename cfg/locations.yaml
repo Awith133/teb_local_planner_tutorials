@@ -1,0 +1,3 @@
+file_to_pit: "/home/hash/catkin_ws/src/smach_pit_exp/src/waypoints.csv"
+file_around_pit: "/home/hash/catkin_ws/src/smach_pit_exp/src/waypoints.csv"
+map_location: "/home/hash/catkin_ws/src/waypoint_pit_planner/src/mapp.csv"

@@ -45,8 +45,10 @@
 
 	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
 		</node>
-	<!-- node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
-			</node -->
+	<rosparam file="$(find teb_local_planner_tutorials)/cfg/locations.yaml" command="load" />
+	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
+		
+			</node>
 
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
@@ -60,11 +62,11 @@
 	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz"/>
 
     <arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
-    <!-- include file="$(find webots_ros)/launch/webots.launch">
+    <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
       <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
-    </include -->
+    </include>
 
      <node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.57  /map /odom  1"/>
 
