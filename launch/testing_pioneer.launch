@@ -63,7 +63,7 @@
     <!-- include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/himil07/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
+      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
     </include -->
 
      <node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.57  /map /odom  1"/>
