@@ -43,6 +43,13 @@
                 <param name="frame_id" value="map"/>
 	</node>
 
+	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
+		</node>
+	<rosparam file="$(find teb_local_planner_tutorials)/cfg/locations.yaml" command="load" />
+	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen">
+		
+			</node>
+
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
 
@@ -58,7 +65,7 @@
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
+      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo1.wbt"/>
     </include>
 	
 	<arg name="auto-close" default="false" doc="Startup mode"/>
