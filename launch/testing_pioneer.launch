@@ -61,12 +61,12 @@
 	  <!--  **************** Visualisation ****************  -->
 	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz"/>
 
-    <!-- arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
+    <arg name="no-gui" default="false," doc="Start Webots with minimal GUI"/>
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/custom_lunar_custompit.wbt"/>
-    </include -->
+      <arg name="world" value="/home/ayush/mrsd_ws/src/lunar-env/worlds/FVD_lunar_surface_V4_demo2.wbt"/>
+    </include>
 
      <node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.57  /map /odom  1"/>
 
