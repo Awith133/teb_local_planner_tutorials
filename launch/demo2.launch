@@ -9,6 +9,8 @@
   - rviz view
  -->
 <launch>
+	<param name="system_name" type="string" value="$(env SYSTEM_NAME)"/>
+	<param name="lunar_env_path" type="string" value="$(env LUNAR_ENV_PATH)"/>
 
         <!--  ************** Global Parameters ***************  -->
         <!--param name="/use_sim_time" value="true"/ -->
@@ -45,7 +47,7 @@
 
 	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
 		</node>
-	<rosparam file="$(find teb_local_planner_tutorials)/cfg/locations.yaml" command="load" />
+		<rosparam file="$(find teb_local_planner_tutorials)/cfg/locations.yaml" command="load" />
 	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen"/>
 
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
@@ -63,7 +65,7 @@
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo2.wbt"/>
+      <arg name="world" value="$(env LUNAR_ENV_PATH)/worlds/FVD_lunar_surface_V4_demo2.wbt"/>
     </include>
 	
 	<arg name="auto-close" default="false" doc="Startup mode"/>
