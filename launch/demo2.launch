@@ -43,12 +43,10 @@
                 <param name="frame_id" value="map"/>
 	</node>
 
-	<!--node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
-		</node-->
+	<node name="wp_planner" pkg="waypoint_pit_planner" type="waypoint_pit_planner_node" output="screen">
+		</node>
 	<rosparam file="$(find teb_local_planner_tutorials)/cfg/locations.yaml" command="load" />
-	<!-- <node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen"/> -->
-		
-			
+	<node name="smach" pkg="smach_pit_exp" type="smach_node.py" output="screen"/>
 
 	<!-- node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
@@ -65,7 +63,7 @@
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo_edge_testing.wbt"/>
+      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo2.wbt"/>
     </include>
 	
 	<arg name="auto-close" default="false" doc="Startup mode"/>
@@ -73,7 +71,9 @@
 	<node name="ground_plane_segmentation" pkg="webots_control" type="webots_control_node" output="screen"/>
     
 	<node pkg="tf" type="static_transform_publisher" name="odom_map_publisher" args="0 0 0 0 0 1.570796326  /map /odom  1"/>
-
+	<node pkg="tf" type="static_transform_publisher" name="odom_noisy_map_publisher" args="0 0 0 0 0 1.570796326  /map /noisy_odom  1"/>
 	<node pkg="tf" type="static_transform_publisher" name="camera_base_link_publisher" args="0.23 0 0.18 -1.570796326 0 -1.570796326  /base_link /apnapioneer3at/MultiSense_S21_meta_range_finder 1"/>
-	
+
+	<!-- Add node for visualizations -->
+	<include file="$(find visualization)/launch/test2.launch"/>
 </launch> 
