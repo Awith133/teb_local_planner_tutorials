@@ -10,7 +10,7 @@ TebLocalPlannerROS:
  max_samples: 500
  global_plan_overwrite_orientation: True
  allow_init_with_backwards_motion: False
- max_global_plan_lookahead_dist: 1
+ max_global_plan_lookahead_dist: 0.8
  global_plan_viapoint_sep: -1
  global_plan_prune_distance: 1
  exact_arc_length: False
@@ -34,7 +34,7 @@ TebLocalPlannerROS:
  # GoalTolerance
 
  xy_goal_tolerance: 0.05
- yaw_goal_tolerance: 6.3
+ yaw_goal_tolerance: 0.16
  free_goal_vel: False
 
  # Obstacles
