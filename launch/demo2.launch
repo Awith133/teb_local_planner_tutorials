@@ -123,5 +123,5 @@ filter_limit_negative: False
 
 	<!-- Add node for visualizations -->
 	<arg name="show_viz" default="1"/>
-	<include file="$(find visualization)/launch/test2.launch" if="$(eval show_viz=='1')"/>
+	<include file="$(find visualization)/launch/test2.launch"/>
 </launch> 
