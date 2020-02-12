@@ -58,7 +58,7 @@
     <include file="$(find webots_ros)/launch/webots.launch">
       <arg name="mode" value="realtime"/>
       <arg name="no-gui" value="$(arg no-gui)"/>
-      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo1.wbt"/>
+      <arg name="world" value="/home/hash/Documents/lunar-env/worlds/FVD_lunar_surface_V4_demo2_original_start_location.wbt"/>
     </include>
 
 	<arg name="auto-close" default="false" doc="Startup mode"/>

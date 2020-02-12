@@ -10,7 +10,7 @@ TebLocalPlannerROS:
  max_samples: 500
  global_plan_overwrite_orientation: True
  allow_init_with_backwards_motion: False
- max_global_plan_lookahead_dist: 0.8
+ max_global_plan_lookahead_dist: 1
  global_plan_viapoint_sep: -1
  global_plan_prune_distance: 1
  exact_arc_length: False
@@ -25,7 +25,7 @@ TebLocalPlannerROS:
  max_vel_theta: 3.036
  acc_lim_x: 0.5
  acc_lim_theta: 0.5
- min_turning_radius: 0.0 # diff-drive robot (can turn on place!)
+ min_turning_radius: 0.01 # diff-drive robot (can turn on place!)
  wheelbase: 0.266
 
  footprint_model:
@@ -33,7 +33,7 @@ TebLocalPlannerROS:
 
  # GoalTolerance
 
- xy_goal_tolerance: 0.05
+ xy_goal_tolerance: 0.3
  yaw_goal_tolerance: 0.16
  free_goal_vel: False
 

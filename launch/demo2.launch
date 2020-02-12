@@ -12,6 +12,7 @@
 	<param name="use_sim_time" type="bool" value="true"/>
 	<param name="system_name" type="string" value="$(env SYSTEM_NAME)"/>
 	<param name="lunar_env_path" type="string" value="$(env LUNAR_ENV_PATH)"/>
+	<!--<param name="show_rock_distances" type="int" value="1"/> -->
 
         <!--  ************** Global Parameters ***************  -->
         <!--param name="/use_sim_time" value="true"/ -->
